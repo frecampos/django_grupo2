@@ -1,0 +1,33 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'Css/estilo.css' %}">
+ {% endblock estilos %} 
+   
+   {% block contenido %}
+    <section class="contenido-objetivo">
+      <div class="titulo-objetivo">
+        <p>Misión</p>
+      </div>
+  {% for item in myv %}
+      <div class="mision">
+        <h1><p>{{item.mision}}</p></h1>
+        <h2><p>• En el área de lavado express (carrocería y aspirado) que ofrece un servicio rápido y económico.</p></h2>
+        <h2><p>• En el área de servicio completo que ofrece servicio de lavado de motor, chasis, carrocería, aspirado, tapicería y pulida</p></h2>
+        <h1><p>Así lograr obtener la satisfacción de nuestros clientes de ofrecerles un servicio de primera.</p></h1>
+      </div>
+      <div class="imagen-derecha">
+        <img src="{% static 'Img/portal3.png' %}" alt="Auto Lavando">
+      </div>
+      <div class="titulo-vision">
+        <p>Visión</p>
+      </div>
+      <div class="vision">
+        <h2><p>{{item.vision}}</p></h2>
+      </div>
+      <div class="imagen-izquierda">
+        <img src="{% static 'Img/portal1.png' %}" alt="Auto Lavando">
+      </div>
+ {% endfor %}
+    </section>
+   {% endblock contenido %}

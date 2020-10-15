@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'Css/estilo.css' %}">
+    <link rel="icon" href="{% static 'Img/portal3.png' %}">
+    {% block estilos %}
+    
+    {% endblock estilos %}
+    <title>Miguel Wash</title>
+  </head>
+  <body class="inicio">
+    <header class="header2">
+      <div class="wrapper">
+          <div class="logo">Miguel Wash</div>
+          <div class="icono-coche">
+            <img src="{% static 'Img/trafico.png' %}" alt="Auto Pequeño" width="40px" height="40px">
+          </div>
+          <nav>
+            <a href="{% url 'INDEX' %}">Inicio</a>
+            <a href="{% url 'GALE' %}">Galeria</a>
+            <a href="{% url 'MYV' %}">Objetivo</a>
+            <a href="{% url 'FORMU' %}">Formulario</a>
+            <a href="">Mapa </a>
+            {% if user.is_authenticated %}
+              <a href="">Bienvenido {{user.first_name}} {{user.last_name}} </a>
+              <a href="{% url 'LOGOUT' %}">Cerrar Sesion</a>
+            {% else %}
+              <a href="{% url 'LOGIN' %}">Login</a>
+            {% endif %}
+            
+            
+          </nav>
+      </div>
+    </header>
+    
+    {% block contenido %}
+    
+    {% endblock contenido %}
+
+    <footer>
+      <nav>
+        <a href="{% url 'INDEX' %}">Inicio</a>
+        <a href="{% url 'GALE' %}">Galeria</a>
+        <a href="">Objetivo</a>
+        <a href="{% url 'FORMU' %}">Formulario</a>
+        <a href="">Mapa</a>
+      </nav>
+      <div class="derecho">
+        <p>Derecho de autor © 2020-2021</p>
+      </div>
+    </footer>
+    {% block js %}
+    
+    {% endblock js %}
+  </body>
+</html>

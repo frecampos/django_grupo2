@@ -1,0 +1,19 @@
+{% extends "web/basel.html" %} {% load static %} {% block contenido %}
+
+<section>
+    <div class="form-register">
+        <h4>Login Usuario</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="formato-formulario">
+                <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese su Usuario" value="">
+                <input class="controls" type="password" name="passw1" id="passw1" placeholder="Ingrese su Contraseña" value="">
+            </div>
+            <input class="bottom" type="submit" name="" value="Registrar">
+        </form>
+    </div>
+</section>
+<div style="text-align: center; color: brown;">
+    <h2>{{msg}}</h2>
+</div>
+{% endblock contenido %}

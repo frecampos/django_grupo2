@@ -1,0 +1,44 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+
+    <section class="contenido">
+      <div class="titulo">
+        <p>Somos una empresa de lavado de autos</p>
+      </div>
+      <div class="sub-titulo">
+        <h1><p>Conoce la experiencia de lavar, de manera rápida, fácil y económica, tu vehículo en Lavamax Autoservicio.</p></h1>
+        <h2><p>• Lavado Mix</p></h2>
+        <h2><p>• Lavado Turbo</p></h2>
+        <h2><p>• Lavado en Seco</p></h2>
+        <img id="2" src="{% static 'Img/AutoPortal.jpg' %}" alt="Auto Lavandose">
+      </div>
+      <div class="imagenCaricatura">
+        <img id="3" src="{% static 'Img/portal1.png' %}" alt="Auto Lavandose">
+        <img id="4" src="{% static 'Img/portal2.png' %}" alt="Auto Lavandose">
+        <img id="5" src="{% static 'Img/portal3.png' %}" alt="Auto Lavandose">
+      </div>
+      <aside>
+        <div class="slider">
+          <ul>
+            {% for item in autos %}
+              <li><img src="{{item.imagen.url}}" alt="Auto lavado" width="500px" height="400px"></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="Comentario">
+          <h2>Comentario</h2>
+        </div>
+        <div class="fotoperfil">
+          <img id="6" src="{% static 'Img/personaAutoLavado.jpg' %}" alt="Persona" height="100" width="100">
+        </div>
+        <div class="letra">
+          <h1>El Servicio es excelente, recibi un buen trato por parte de los colaboradores y muy eficiente en su labor.</h1>
+        </div>
+      </aside>
+    </section>
+
+   
+{% endblock contenido %}

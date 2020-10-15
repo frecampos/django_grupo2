@@ -1,0 +1,53 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'dist/css/lightbox.min.css' %}">
+{% endblock estilos %}
+    
+  
+{% block contenido %}
+    <section class="contenido">
+      <div class="titulo-galeria">
+        <p>Imágenes de nuestras intalaciones</p>
+      </div>
+      <aside>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado1.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado1.png' %}" alt="Intalacion de Autos">
+          </a>
+          </div>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado5.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado5.png' %}" alt="Intalacion de Autos">
+          </a>
+            </div>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado3.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado3.png' %}" alt="Intalacion de Autos">
+          </a>
+            </div>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado4.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado4.png' %}" alt="Intalacion de Autos">
+          </a>
+            </div>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado2.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado2.png' %}" alt="Intalacion de Autos">
+          </a>
+          </div>
+        <div class="local-auto">
+          <a href="{% static 'Img/InstalacionLavado6.png' %}" data-lightbox="lavados" data-title="Lavado intensivo">
+            <img src="{% static 'Img/InstalacionLavado6.png' %}" alt="Intalacion de Autos">
+          </a>
+        </div>
+      </aside>
+    </section>    
+{% endblock contenido %}
+
+{% block js %}
+  <script src="{% static 'dist/js/lightbox-plus-jquery.min.js' %}"></script>
+{% endblock js %}
+   
+
