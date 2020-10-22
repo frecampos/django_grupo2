@@ -3,7 +3,7 @@
 <section>
     <div class="form-register">
         <h4>Login Usuario</h4>
-        <form action="" method="POST">
+        <form action="{% url 'LOGIN' %}" method="POST">
             {% csrf_token %}
             <div class="formato-formulario">
                 <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese su Usuario" value="">

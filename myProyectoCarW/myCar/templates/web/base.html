@@ -24,8 +24,9 @@
             <a href="{% url 'FORMU' %}">Formulario</a>
             <a href="">Mapa </a>
             {% if user.is_authenticated %}
-              <a href="">Bienvenido {{user.first_name}} {{user.last_name}} </a>
-              <a href="{% url 'LOGOUT' %}">Cerrar Sesion</a>
+              <a href="{% url 'INSUMOS' %}">Insumos</a>
+              <a href="{% url 'LOGOUT' %}">Cerrar</a>
+              <a href="">{{user.first_name}} {{user.last_name}} </a>              
             {% else %}
               <a href="{% url 'LOGIN' %}">Login</a>
             {% endif %}

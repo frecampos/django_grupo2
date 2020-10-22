@@ -1,66 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="Css/estilo.css">
-    <link rel="icon" href="Img/portal3.png">
-    <title>Formulario Insumo</title>
-  </head>
-  <body class="formulario-insumo">
-    <header class="header3">
-      <div class="wrapper1">
-          <div class="logo">Miguel Wash</div>
-          <div class="icono-coche">
-            <img src="Img/trafico.png" alt="Auto Pequeño" width="40px" height="40px">
-          </div>
-          <nav class="nav-formulario">
-            <a href="Inicio.html">Inicio</a>
-            <a href="Galeria.html">Galeria</a>
-            <a href="Objetivo.html">Objetivo</a>
-            <a href="Formulario.html">Formulario</a>
-            <a href="Mapa.html">Mapa</a>
-          </nav>
-      </div>
-    </header>
-    <header class="header4">
-      <div class="wrapper2">
-        <input type="checkbox" name="" id="btn-menu-formulario">
-        <label for="btn-menu-formulario">
-          <img src="Img/menu.png" width="30px" height="30px" alt="">
-        </label>
-        <nav class="nav-menu-formulario">
-          <ul>
-            <li><a href="Formulario.html">Formulario Usuario</a></li>
-            <li><a href="Formulario-Insumo.html">Formulario Insumo</a></li>
-          </ul>
-      </div>
-    </header>
-    <section>
-      <div class="form-register-insumo">
+{% extends "web/base.html" %} {% load static %} {% block contenido %}
+<script>
+    function ir() {
+        location.href = '/admin_insumos/';
+    }
+</script>
+<section>
+    <div class="form-register-insumo">
         <h4>Formulario Insumo</h4>
-        <script src="dist/js/scripts.js"></script>
-        <script src="dist/js/insumo.js"></script>
-        <form action="" method="POST" onsubmit="return validarTodo_formularioInsumo()">
-          <div class="formato-formulario">
-            <input class="controls" type="text" name="nombreInsumo" id="nombreInsumo" placeholder="Ingrese el N.Producto" value="">
-            <input class="controls" type="number" name="precio" id="precio" placeholder="Ingrese el Precio" value="">
-            <input class="controls" type="text" name="descrip" id="descrip" placeholder="Ingrese la Descripcion" value="">
-          </div>
-          <input class="bottom" type="submit" name="" value="Ingresar Producto">
+        <script src="{% static 'dist/js/scripts.js' %}"></script>
+        <script src="{% static 'dist/js/insumo.js' %}"></script>
+        <form action="{% url 'INSUMOS' %}" method="POST" onsubmit="return validarTodo_formularioInsumo()">
+            {% csrf_token %}
+            <div class="formato-formulario">
+                <input class="controls" type="text" name="nombreInsumo" id="nombreInsumo" placeholder="Ingrese el N.Producto" value="">
+                <input class="controls" type="number" name="precio" id="precio" placeholder="Ingrese el Precio" value="">
+                <input class="controls" type="text" name="descrip" id="descrip" placeholder="Ingrese la Descripcion" value="">
+                <input class="controls" type="text" name="stock" id="stock" placeholder="Ingrese el stock" value="">
+            </div>
+            <input class="bottom" type="submit" name="" value="Ingresar Insumo">
+            <input class="bottom" type="button" value="Adm. Insumos" onclick="ir()">
         </form>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <a href="Inicio.html">Inicio</a>
-        <a href="Galeria.html">Galeria</a>
-        <a href="Objetivo.html">Objetivo</a>
-        <a href="Formulario.html">Formulario</a>
-        <a href="Mapa.html">Mapa</a>
-      </nav>
-      <div class="derecho">
-        <p>Derecho de autor © 2020-2021</p>
-      </div>
-    </footer>
-  </body>
-</html>
+    </div>
+</section>
+<div style="text-align: center;color: crimson;">
+    <h2>{{msg}}</h2>
+</div>
+{% endblock contenido %}

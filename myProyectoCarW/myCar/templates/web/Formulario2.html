@@ -17,7 +17,7 @@
         <h4>Formulario Usuario</h4>
         <script src="{% static 'dist/js/scripts.js' %}"></script>
         <script src="{% static 'dist/js/cliente.js' %}"></script>
-        <form action="" method="POST">
+        <form action="{% url 'FORMU' %}" method="POST">
             {% csrf_token %}
             <div class="formato-formulario">
                 <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre" value="">
