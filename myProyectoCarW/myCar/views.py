@@ -100,17 +100,21 @@ def formulario(request):
         try:
             u = User.objects.get(username=usuario)
             return render(request,'web/Formulario2.html',{'msg':'usuario existe'})
-        except:            
-            if pass1!=pass2:
-                return render(request,'web/Formulario2.html',{'msg':'password incorrectas'})
-            u = User()
-            u.first_name= nombre
-            u.last_name = apellido
-            u.email= email
-            u.username = usuario
-            u.set_password(pass1)
-            u.save()
-            return render(request,'web/Formulario2.html',{'msg':'grabo usuario'})
+        except:
+            try:
+                u = User.objects.get(email=email)
+                return render(request,'web/Formulario2.html',{'msg':'email existe'})
+            except:                           
+                if pass1!=pass2:
+                    return render(request,'web/Formulario2.html',{'msg':'password incorrectas'})
+                u = User()
+                u.first_name= nombre
+                u.last_name = apellido
+                u.email= email
+                u.username = usuario
+                u.set_password(pass1)
+                u.save()
+                return render(request,'web/Formulario2.html',{'msg':'grabo usuario'})
     return render(request,'web/Formulario2.html')
 
 def MisionyVision(request):

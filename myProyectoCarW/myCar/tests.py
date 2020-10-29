@@ -4,7 +4,7 @@ from .models import Insumos
 # Create your tests here.
 class TestCadenas(unittest.TestCase):
 
-    def test_iguales(self):
+    def test_iguales(self):        
         self.assertEquals('ii','ii')
 
     def test_distinto(self):
